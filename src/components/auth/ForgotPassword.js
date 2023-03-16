@@ -5,6 +5,7 @@ import CustomIconText from '../customComponents/CustomIconText';
 import EmailIcon from '@mui/icons-material/Email';
 import CustomButton from '../customComponents/CustomButton';
 import { ReactComponent as ForgotPasswordPic } from '../../assests/forgotpassword.svg';
+import { Link } from 'react-router-dom';
 const ForgotPassword = () => {
   return (
     <Box
@@ -45,7 +46,7 @@ const ForgotPassword = () => {
           }}
         >
           <Box sx={{ p: '0rem 1.5rem' }}>
-            <ForgotPasswordPic width='5rem'/>
+            <ForgotPasswordPic width="5rem" />
             <Typography id="modal-modal-title" variant="h5">
               Forgot Password
             </Typography>
@@ -69,8 +70,9 @@ const ForgotPassword = () => {
               variant="outlined"
             />
           </Box>
-
-          <CustomButton variant="contained" text="Continue" />
+          <Link to='/verificationcode' >
+            <CustomButton variant="contained" text="Continue"  />
+          </Link>
         </Box>
       </Box>
     </Box>
