@@ -1,11 +1,14 @@
-import { Box, Input, Stack, TextField, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import verifyCodeBg from '../../assests/verifyCodeBg.jpg';
 import { ReactComponent as VerifyCode } from '../../assests/verifyCode.svg';
 
 import CustomButton from '../customComponents/CustomButton';
-import { Link } from 'react-router-dom';
+import PinInput from 'react-pin-input';
+import { useTheme } from '@mui/material/styles';
 
 const VerificationCode = () => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -54,45 +57,28 @@ const VerificationCode = () => {
             >
               The confirmation code send via email
             </Typography>
-            <Stack
-              direction="row"
-              gap={2}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <TextField
-                type="number"
-                color="authPrimary"
-                InputProps={{
-                  maxLength: 1,
-                  sx: { height: 40, width: 40, fontSize: '1rem' },
-                }}
-              />
-              <TextField
-                type="number"
-                color="authPrimary"
-                InputProps={{
-                  maxLength: 1,
-                  sx: { height: 40, width: 40, fontSize: '1rem' },
-                }}
-              />
-              <TextField
-                type="number"
-                color="authPrimary"
-                InputProps={{
-                  maxLength: 1,
-                  sx: { height: 40, width: 40, fontSize: '1rem' },
-                }}
-              />
-              <TextField
-                type="number"
-                color="authPrimary"
-                InputProps={{
-                  maxLength: 1,
-                  sx: { height: 40, width: 40, fontSize: '1rem' },
-                }}
-              />
-            </Stack>
+
+            <PinInput
+              length={4}
+              initialValue=""
+              onChange={(value, index) => {}}
+              type="numeric"
+              inputMode="number"
+              focus
+              inputStyle={{
+                borderRadius: '.3rem',
+                width: '35px',
+                height: '35px',
+                margin: '5px',
+                fontWeight: 'bold',
+                fontSize: '24px',
+              }}
+              inputFocusStyle={{
+                borderColor: `${theme.palette.authPrimary.main}`,
+              }}
+              autoSelect={true}
+              regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
+            />
 
             <CustomButton variant="contained" text="Continue" />
           </Box>
