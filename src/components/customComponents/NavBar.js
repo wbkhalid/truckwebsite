@@ -143,7 +143,7 @@ export default function PrimarySearchAppBar() {
         
         sx={{
           color: '#fff',
-          height: '2.5rem',
+          height: '2.6rem',
           display: 'flex',
           justifyContent: 'center',
         }}

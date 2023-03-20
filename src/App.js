@@ -9,13 +9,16 @@ import Success from './components/auth/Success';
 import VerificationCode from './components/auth/VerificationCode';
 import theme from './theme';
 import './App.css';
-import Dashboard from './pages/dashboard';
+import Dashboard from './pages/home';
+import Drivers from './pages/drivers';
 const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
         <Routes>
+        
           <Route path="/" element={<Dashboard />} />
+          <Route path="/drivers" element={<Drivers />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
