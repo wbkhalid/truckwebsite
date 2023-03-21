@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-
 import List from '@mui/material/List';
-
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -21,42 +18,50 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import { Link } from 'react-router-dom';
 
 const menuItems = [
   {
     id: 1,
     icon: <SpeedOutlinedIcon />,
     name: 'Dashboard',
+    to: '/drivers',
   },
   {
     id: 2,
     icon: <CalendarMonthOutlinedIcon />,
     name: 'Trips',
+    to: '/drivers',
   },
   {
     id: 3,
     icon: <GroupsOutlinedIcon />,
     name: 'Drivers',
+    to: '/drivers',
   },
   {
     id: 4,
     icon: <PersonOutlineOutlinedIcon />,
     name: 'Company',
+    to: '/drivers',
   },
   {
     id: 5,
     icon: <TrendingUpOutlinedIcon />,
     name: 'Reports',
+    to: '/drivers',
   },
   {
     id: 6,
     icon: <SettingsOutlinedIcon />,
     name: 'Settings',
+    to: '/drivers',
   },
   {
     id: 7,
     icon: <HelpOutlineOutlinedIcon />,
     name: 'Help',
+    to: '/drivers',
   },
 ];
 
@@ -141,16 +146,33 @@ const CustomSideBar = () => {
 
       <List sx={{ mt: 2 }}>
         {menuItems.map((item) => (
-          <ListItem key={item.id}>
-            <ListItemIcon sx={{ fontSize: 60 }}>{item.icon}</ListItemIcon>
-            <ListItemText
-              primary={item.name}
-              primaryTypographyProps={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#7a7e82',
+          <ListItem
+            component={Link}
+            to={item.to}
+            key={item.id}
+            sx={{
+              fontSize: 15,
+              fontWeight: 'bold',
+              color: '#7a7e82',
+
+              '&:hover': {
+                color: '#fff',
+                backgroundColor: (theme) => theme.palette.authPrimary.main,
+                borderTopRightRadius: '1.5rem',
+                borderBottomRightRadius: '1.5rem',
+              },
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                '&:hover': {
+                  color: '#fff',
+                },
               }}
-            />
+            >
+              {item.icon}
+            </ListItemIcon>
+            <ListItemText primary={item.name} disableTypography />
           </ListItem>
         ))}
       </List>

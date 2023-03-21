@@ -10,6 +10,7 @@ import {
   Button,
   Card,
   Avatar,
+  useTheme,
 } from '@mui/material';
 import CustomSideBar from '../../components/customComponents/CustomSideBar';
 import NavBar from '../../components/customComponents/NavBar';
@@ -17,61 +18,49 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const driverData = [
   {
-    id:1,
+    id: 1,
     // image: URL(''),
     name: 'john',
     title: 'driver',
   },
   {
-    id:2,
+    id: 2,
     // image: URL(''),
     name: 'john',
     title: 'driver',
   },
   {
-    id:3,
+    id: 3,
     // image: URL(''),
     name: 'john',
     title: 'driver',
   },
   {
-    id:4,
+    id: 4,
     // image: URL(''),
     name: 'john',
     title: 'driver',
   },
   {
-    id:5,
+    id: 5,
     // image: URL(''),
     name: 'john',
     title: 'driver',
   },
   {
-    id:6,
+    id: 6,
     // image: URL(''),
     name: 'john',
     title: 'driver',
   },
   {
-    id:7,
+    id: 7,
     // image: URL(''),
     name: 'john',
     title: 'driver',
   },
   {
-    id:8,
-    // image: URL(''),
-    name: 'john',
-    title: 'driver',
-  },
-  {
-    id:9,
-    // image: URL(''),
-    name: 'john',
-    title: 'driver',
-  },
-  {
-    id:10,
+    id: 8,
     // image: URL(''),
     name: 'john',
     title: 'driver',
@@ -79,6 +68,7 @@ const driverData = [
 ];
 
 const Drivers = () => {
+  const theme = useTheme();
   return (
     <Box sx={{ display: 'flex' }}>
       {/* NavBar */}
@@ -88,11 +78,8 @@ const Drivers = () => {
       {/* Driver Component */}
       <Box
         component="main"
-        width="100%"
         sx={{
-          p: 3,
-          marginTop: 6,
-          // backgroundColor: 'red',
+          marginTop: 10,
           px: '2rem',
           py: '1.5rem',
         }}
@@ -101,14 +88,19 @@ const Drivers = () => {
         <Stack
           direction="row"
           justifyContent="space-between"
-          sx={{ mt: '1rem' }}
+          alignItems="center"
+          sx={{ mt: '1rem', mb: '3rem' }}
         >
           <TextField
             placeholder="Search"
-            variant="outlined"
-            // color='#fff'
-            sx={{ width: '40%' }}
+            variant="filled"
+            sx={{
+              width: '40%',
+              backgroundColor: '#f7f9fb',
+            }}
             InputProps={{
+              sx: { height: 45, borderRadius: '.5rem' },
+              disableUnderline: true,
               startAdornment: (
                 <InputAdornment position="start">
                   <IconButton>
@@ -122,38 +114,79 @@ const Drivers = () => {
             sx={{
               color: '#fff',
               backgroundColor: (theme) => theme.palette.authPrimary.main,
-              height: '50px',
+              height: '2.5rem',
               fontSize: '1.2rem',
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.authPrimary.light,
+              },
             }}
             variant="contained"
-            startIcon={<AddCircleOutlineIcon />}
+            startIcon={
+              <AddCircleOutlineIcon
+                sx={{ width: '1.5rem', height: '1.5rem' }}
+              />
+            }
           >
             Add Driver
           </Button>
         </Stack>
-        <Grid container  spacing={2} style={{ flexGrow: 1 }}>
+        <Grid container spacing={2} sx={{ flexGrow: 1 }}>
           {driverData.map((card) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={card.id}>
               <Card
                 variant="outlined"
                 sx={{
-                  width: '250px',
-                  height: '250px',
+                  px: '0rem',
+                  py: '1rem',
                   display: 'flex',
+                  flexGrow: 1,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  backgroundColor: (theme) => theme.palette.authPrimary.main,
+                  backgroundColor: ' #f7f9fb',
+                  borderRadius: '1rem',
+                  cursor: 'pointer',
+
+                  position: 'relative',
+
+                  '&:hover': {
+                    backgroundColor: (theme) => theme.palette.authPrimary.main,
+                    color: '#fff',
+
+                    '& .MuiAvatar-root': {
+                      borderColor: '#fff',
+                    },
+
+                    '& button': {
+                      borderColor: '#fff',
+                      color: '#fff',
+                    },
+                    '&:hover .divider': {
+                      visibility: 'visible',
+                    },
+                  },
                 }}
               >
                 <Stack alignItems="center" gap={1}>
                   <Avatar
                     alt="Remy Sharp"
                     src="/static/images/avatar/1.jpg"
-                    sx={{ border: '2px solid black', width: 72, height: 72 }}
+                    sx={{
+                      border: `2px solid ${theme.palette.authPrimary.main}`,
+                      width: 72,
+                      height: 72,
+                    }}
                   />
                   <Typography variant="h6">{card.name}</Typography>
                   <Typography variant="p">{card.title}</Typography>
-                  <Button variant="outlined" sx={{ px: '3rem' }}>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      px: '3rem',
+                      color: (theme) => theme.palette.authPrimary.main,
+                      borderColor: (theme) => theme.palette.authPrimary.main,
+                      fontWeight: 'bold',
+                    }}
+                  >
                     View Details
                   </Button>
                 </Stack>
