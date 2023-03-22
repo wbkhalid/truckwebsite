@@ -11,6 +11,10 @@ import theme from './theme';
 import './App.css';
 import Dashboard from './pages/home';
 import Drivers from './pages/drivers';
+import PersonalInfoTop from './components/customComponents/PersonalInfoTop';
+import PersonalInformation from './pages/personal infomation';
+import VehicleInformation from './pages/vehicle information';
+import Documents from './pages/documents';
 const App = () => {
   return (
     <>
@@ -23,8 +27,13 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/verificationcode" element={<VerificationCode />} />
+
           <Route path="/createpassword" element={<CreatePassword />} />
           <Route path="/success" element={<Success />} />
+          <Route path="/info" element={<PersonalInfoTop />} />
+          <Route path="/personal" element={<PersonalInformation />} />
+          <Route path="/vehicle" element={<VehicleInformation />} />
+          <Route path="/documents" element={<Documents />} />
         </Routes>
       </ThemeProvider>
     </>
