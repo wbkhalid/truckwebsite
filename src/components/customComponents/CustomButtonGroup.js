@@ -26,7 +26,10 @@ const CustomButtonGroup = () => {
     <Stack direction="row">
       {buttonData.map((item) => (
         <Button
+        key={item.id}
           variant="contained"
+          disableElevation
+        
           component={Link}
           to={item.to}
           sx={{
