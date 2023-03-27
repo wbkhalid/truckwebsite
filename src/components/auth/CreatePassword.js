@@ -1,11 +1,4 @@
-import {
-  Box,
-  
-  Divider,
-  IconButton,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Box, Divider, IconButton, Stack, Typography } from '@mui/material';
 import createPasswordBg from '../../assests/createPasswordBg.jpg';
 import CustomInput from '../customComponents/CustomInput';
 import CustomIconText from '../customComponents/CustomIconText';
@@ -13,7 +6,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import CustomButton from '../customComponents/CustomButton';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import GoogleIcon from '@mui/icons-material/Google';
-import { Link } from 'react-router-dom';
+
 import { ReactComponent as CreatePasswordPic } from '../../assests/createpassword.svg';
 
 const CreatePassword = () => {
@@ -56,7 +49,7 @@ const CreatePassword = () => {
           }}
         >
           <Box sx={{ p: '0rem 1.5rem' }}>
-            <CreatePasswordPic width="5rem"/>
+            <CreatePasswordPic width="5rem" />
             <Typography id="modal-modal-title" variant="h5">
               Create Password
             </Typography>
@@ -89,7 +82,6 @@ const CreatePassword = () => {
               variant="outlined"
             />
           </Box>
-
           <CustomButton variant="contained" text="Continue" />
           <Divider sx={{ fontSize: '.8rem' }}>OR</Divider>
 

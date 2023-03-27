@@ -25,7 +25,7 @@ const menuItems = [
     id: 1,
     icon: <SpeedOutlinedIcon />,
     name: 'Dashboard',
-    to: '/drivers',
+    to: '/',
   },
   {
     id: 2,

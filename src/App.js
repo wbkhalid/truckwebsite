@@ -9,7 +9,7 @@ import Success from './components/auth/Success';
 import VerificationCode from './components/auth/VerificationCode';
 import theme from './theme';
 import './App.css';
-import Dashboard from './pages/home';
+import Dashboard from './pages/dashboard';
 import Drivers from './pages/drivers';
 import PersonalInfoTop from './components/customComponents/PersonalInfoTop';
 import PersonalInformation from './pages/personal infomation';
@@ -20,7 +20,6 @@ const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <Routes>
-        
           <Route path="/" element={<Dashboard />} />
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/login" element={<SignIn />} />
