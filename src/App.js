@@ -15,6 +15,7 @@ import PersonalInfoTop from './components/customComponents/PersonalInfoTop';
 import PersonalInformation from './pages/personal infomation';
 import VehicleInformation from './pages/vehicle information';
 import Documents from './pages/documents';
+import Company from './pages/company';
 const App = () => {
   return (
     <>
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/personal" element={<PersonalInformation />} />
           <Route path="/vehicle" element={<VehicleInformation />} />
           <Route path="/documents" element={<Documents />} />
+          <Route path="/company" element={<Company />} />
         </Routes>
       </ThemeProvider>
     </>

@@ -43,7 +43,7 @@ const menuItems = [
     id: 4,
     icon: <PersonOutlineOutlinedIcon />,
     name: 'Company',
-    to: '/drivers',
+    to: '/company',
   },
   {
     id: 5,
