@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material';
 import forgotPasswordBg from '../../assests/forgotPasswordBg.jpg';
-import CustomInput from '../customComponents/CustomInput';
-import CustomIconText from '../customComponents/CustomIconText';
+import CustomInput from '../commonComponents/CustomInput';
+import CustomIconText from '../commonComponents/CustomIconText';
 import EmailIcon from '@mui/icons-material/Email';
-import CustomButton from '../customComponents/CustomButton';
+import CustomButton from '../commonComponents/CustomButton';
 import { ReactComponent as ForgotPasswordPic } from '../../assests/forgotpassword.svg';
 import { Link } from 'react-router-dom';
 const ForgotPassword = () => {

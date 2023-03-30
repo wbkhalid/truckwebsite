@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import verifyCodeBg from '../../assests/verifyCodeBg.jpg';
 import { ReactComponent as VerifyCode } from '../../assests/verifyCode.svg';
 
-import CustomButton from '../customComponents/CustomButton';
+import CustomButton from '../commonComponents/CustomButton';
 import PinInput from 'react-pin-input';
 import { useTheme } from '@mui/material/styles';
 

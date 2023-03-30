@@ -1,8 +1,8 @@
 import { Typography, Box, useTheme } from '@mui/material';
-import CustomSideBar from '../../components/customComponents/CustomSideBar';
-import NavBar from '../../components/customComponents/NavBar';
+import CustomSideBar from '../../components/commonComponents/CustomSideBar';
+import NavBar from '../../components/commonComponents/NavBar';
 
-import RegistrationForm from './RegistrationForm';
+import CompanyRegistrationForm from './CompanyRegistrationForm';
 
 const Company = () => {
   const theme = useTheme();
@@ -28,7 +28,7 @@ const Company = () => {
           marginTop="1rem"
           padding="2rem"
         >
-          <RegistrationForm />
+          <CompanyRegistrationForm />
         </Box>
       </Box>
     </Box>

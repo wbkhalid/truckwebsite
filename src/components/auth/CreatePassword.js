@@ -1,9 +1,9 @@
 import { Box, Divider, IconButton, Stack, Typography } from '@mui/material';
 import createPasswordBg from '../../assests/createPasswordBg.jpg';
-import CustomInput from '../customComponents/CustomInput';
-import CustomIconText from '../customComponents/CustomIconText';
+import CustomInput from '../commonComponents/CustomInput';
+import CustomIconText from '../commonComponents/CustomIconText';
 import LockIcon from '@mui/icons-material/Lock';
-import CustomButton from '../customComponents/CustomButton';
+import CustomButton from '../commonComponents/CustomButton';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import GoogleIcon from '@mui/icons-material/Google';
 

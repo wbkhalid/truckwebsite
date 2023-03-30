@@ -31,7 +31,7 @@ const menuItems = [
     id: 2,
     icon: <CalendarMonthOutlinedIcon />,
     name: 'Trips',
-    to: '/drivers',
+    to: '/trips',
   },
   {
     id: 3,

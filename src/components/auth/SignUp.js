@@ -7,12 +7,12 @@ import {
   Typography,
 } from '@mui/material';
 import signUpBg from '../../assests/signUpBg.jpg';
-import CustomInput from '../customComponents/CustomInput';
-import CustomIconText from '../customComponents/CustomIconText';
+import CustomInput from '../commonComponents/CustomInput';
+import CustomIconText from '../commonComponents/CustomIconText';
 import Person2Icon from '@mui/icons-material/Person2';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import CustomButton from '../customComponents/CustomButton';
+import CustomButton from '../commonComponents/CustomButton';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Link } from 'react-router-dom';

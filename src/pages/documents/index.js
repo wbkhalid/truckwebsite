@@ -1,9 +1,9 @@
 import { Grid, Box, Typography, useTheme, Input, Button } from '@mui/material';
-import CustomSideBar from '../../components/customComponents/CustomSideBar';
-import NavBar from '../../components/customComponents/NavBar';
+import CustomSideBar from '../../components/commonComponents/CustomSideBar';
+import NavBar from '../../components/commonComponents/NavBar';
 
-import PersonalInfoTop from '../../components/customComponents/PersonalInfoTop';
-import CustomButtonGroup from '../../components/customComponents/CustomButtonGroup';
+import PersonalInfoTop from '../../components/commonComponents/PersonalInfoTop';
+import CustomButtonGroup from '../../components/commonComponents/CustomButtonGroup';
 import { useRef } from 'react';
 import DocumentTable from './DocumentTable';
 

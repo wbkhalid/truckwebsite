@@ -1,10 +1,10 @@
 import { Grid, Box, useTheme } from '@mui/material';
-import CustomSideBar from '../../components/customComponents/CustomSideBar';
-import NavBar from '../../components/customComponents/NavBar';
+import CustomSideBar from '../../components/commonComponents/CustomSideBar';
+import NavBar from '../../components/commonComponents/NavBar';
 
-import PersonalInfoTop from '../../components/customComponents/PersonalInfoTop';
-import CustomButtonGroup from '../../components/customComponents/CustomButtonGroup';
-import VehicalForm from './VehicalForm';
+import PersonalInfoTop from '../../components/commonComponents/PersonalInfoTop';
+import CustomButtonGroup from '../../components/commonComponents/CustomButtonGroup';
+import VehicleForm from './VehicleForm';
 
 const VehicleInformation = () => {
   const theme = useTheme();
@@ -31,7 +31,7 @@ const VehicleInformation = () => {
                 backgroundColor={theme.palette.background.main}
                 sx={{ px: 2, py: 4 }}
               >
-                <VehicalForm />
+                <VehicleForm />
               </Box>
             </Grid>
             <Grid item xs={12} sm={6}>

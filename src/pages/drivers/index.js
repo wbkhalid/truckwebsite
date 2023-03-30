@@ -12,8 +12,8 @@ import {
   Avatar,
   useTheme,
 } from '@mui/material';
-import CustomSideBar from '../../components/customComponents/CustomSideBar';
-import NavBar from '../../components/customComponents/NavBar';
+import CustomSideBar from '../../components/commonComponents/CustomSideBar';
+import NavBar from '../../components/commonComponents/NavBar';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const driverData = [

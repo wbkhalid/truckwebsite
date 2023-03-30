@@ -1,20 +1,26 @@
 import { useFormik } from 'formik';
-import { TextField, Grid, Typography, Stack } from '@mui/material';
-import validationSchema from './validationSchema';
-import CustomButton from './CompanyButton';
-import formFields from './formFields';
+import { TextField, Grid, Typography, Stack, MenuItem } from '@mui/material';
+
+import CustomButton from '../../components/commonComponents/CompanyButton';
+import tripFields from './tripFields';
+
 
 const initialValues = {
-  companyName: '',
+  tripName: '',
   email: '',
   mobileNumber: '',
-  address: '',
-  city: '',
-  postalCode: '',
-  country: '',
+  productName: '',
+  weightSize: '',
+  vehicleType: '',
+  driverLicense: '',
+  state: '',
+  driverLicenseIssueDate: '',
+  driverLicenseExpiryDate: '',
+  startLocation: '',
+  endLocation: '',
 };
 
-const RegistrationForm = () => {
+const TripRegistrationForm = () => {
   const {
     values,
     errors,
@@ -25,7 +31,7 @@ const RegistrationForm = () => {
     resetForm,
   } = useFormik({
     initialValues,
-    validationSchema,
+
     onSubmit: (values, action) => {
       console.log(values);
       action.resetForm();
@@ -37,8 +43,8 @@ const RegistrationForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {formFields.map(({ name, label, placeholder, id }) => (
-        <Grid container key={id} sx={{ mt: '.5rem' }}>
+      {tripFields.map(({ name, label, placeholder, type, options }) => (
+        <Grid container key={name} alignItems="center" sx={{ mt: '.5rem' }}>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom sx={{ color: '#4c4d4d' }}>
               {label}
@@ -53,6 +59,12 @@ const RegistrationForm = () => {
               onBlur={handleBlur}
               error={touched[name] && Boolean(errors[name])}
               placeholder={placeholder}
+              select={type === 'select'}
+              SelectProps={{
+                displayEmpty: true,
+                renderValue: (value) => (value ? value : placeholder),
+              }}
+              {...(type === 'select' && { options })}
               sx={{
                 width: '30%',
               }}
@@ -65,14 +77,19 @@ const RegistrationForm = () => {
                 },
                 disableUnderline: true,
               }}
-            />
+            >
+              {options?.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
             {errors[name] && touched[name] ? (
               <p style={{ color: 'red' }}>{errors[name]}</p>
             ) : null}
           </Grid>
         </Grid>
       ))}
-
       <Stack
         direction="row"
         justifyContent="center"
@@ -86,4 +103,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default TripRegistrationForm;

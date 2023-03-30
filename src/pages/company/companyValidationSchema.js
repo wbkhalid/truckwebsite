@@ -1,19 +1,15 @@
 import * as Yup from 'yup';
+const phoneNumberRegExp = /^(?:\+92|0)(?:(3\d{2}))?(\d{7})$/;
 
-const validationSchema = Yup.object().shape({
+const companyvalidationSchema = Yup.object().shape({
   companyName: Yup.string()
     .min(3, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   mobileNumber: Yup.string()
-    .matches(
-      /^[0-9]*$/,
-      'Please enter a valid mobile number with only digits (no spaces or special characters)'
-    )
-    .min(10, 'Too Short!')
-    .max(15, 'Too Long!')
-    .required('Required'),
+    .matches(phoneNumberRegExp, 'Phone number is not valid')
+    .required('Phone number is required'),
   address: Yup.string().required('Required'),
   city: Yup.string()
     .min(3, 'Too Short!')
@@ -30,4 +26,4 @@ const validationSchema = Yup.object().shape({
     .required('Required'),
 });
 
-export default validationSchema;
+export default companyvalidationSchema;

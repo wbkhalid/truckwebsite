@@ -11,11 +11,13 @@ import theme from './theme';
 import './App.css';
 import Dashboard from './pages/dashboard';
 import Drivers from './pages/drivers';
-import PersonalInfoTop from './components/customComponents/PersonalInfoTop';
+import PersonalInfoTop from './components/commonComponents/PersonalInfoTop';
 import PersonalInformation from './pages/personal infomation';
 import VehicleInformation from './pages/vehicle information';
 import Documents from './pages/documents';
 import Company from './pages/company';
+import Trips from './pages/trip';
+
 const App = () => {
   return (
     <>
@@ -35,6 +37,7 @@ const App = () => {
           <Route path="/vehicle" element={<VehicleInformation />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/company" element={<Company />} />
+          <Route path="/trips" element={<Trips />} />
         </Routes>
       </ThemeProvider>
     </>
